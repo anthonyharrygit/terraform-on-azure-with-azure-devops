@@ -9,7 +9,7 @@ resource "azurerm_storage_account" "iis01_storage_account" {
 }
 
 
-# Resource: Azure Linux Virtual Machine
+# Resource: Azure Linux Virtual Machines
 resource "azurerm_windows_virtual_machine" "iis01_vm" {
   name = "${local.resource_name_prefix}-iis1"
   #computer_name = "web-linux-vm" # Hostname of the VM (Optional)
