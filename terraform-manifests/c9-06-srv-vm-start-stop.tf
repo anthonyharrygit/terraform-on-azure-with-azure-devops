@@ -69,7 +69,7 @@ resource "azurerm_automation_runbook" "startstopvmrunbook" {
       name                           = "startstopvmrunbook"
       location                       = azurerm_resource_group.rg.location
       resource_group_name            = azurerm_resource_group.rg.name
-      automation_account_name        = azurerm_automation_account.mrstautomationn.name
+      automation_account_name        = azurerm_automation_account.mrstautomation.name
       log_verbose                    = "true"
       log_progress                   = "true"
       description                    = "This runbook starts VMs in parallel based on a matching tag value"
