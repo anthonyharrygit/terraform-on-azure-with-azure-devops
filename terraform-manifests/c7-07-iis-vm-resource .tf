@@ -111,7 +111,7 @@ SETTINGS
 }
 */
 
-# Generate random text for a unique storage account name
+# Generate random text for a unique storage account names
 resource "random_id" "iis1_random_id" {
   keepers = {
     # Generate a new ID only when a new resource group is defined
