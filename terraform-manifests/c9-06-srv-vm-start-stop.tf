@@ -1,9 +1,9 @@
 variable "automation_account_name" {
     type = string
-    default = "MRSAutomationAccountDev"
+    default = "MRSTAutomationAccountDev"
 }
 
-resource "azurerm_automation_account" "mrsautomation" {
+resource "azurerm_automation_account" "mrstautomation" {
       name = var.automation_account_name
       location = azurerm_resource_group.rg.location
       resource_group_name = azurerm_resource_group.rg.name
@@ -17,7 +17,7 @@ resource "azurerm_automation_schedule" "scheduledstartvm" {
   name                    = "StartVM"
   resource_group_name     = azurerm_resource_group.rg.name
   #automation_account_name = "testautomation"
-  automation_account_name = azurerm_automation_account.mwautomation.name
+  automation_account_name = azurerm_automation_account.mrstautomation.name
   frequency               = "Day"
   interval                = 1
   timezone                = "Europe/London"
@@ -41,7 +41,7 @@ resource "azurerm_automation_job_schedule" "startvm_sched" {
 resource "azurerm_automation_schedule" "scheduledstopvm" {
   name                    = "StopVM"
   resource_group_name     = azurerm_resource_group.rg.name
-  automation_account_name = azurerm_automation_account.mrsautomation.name
+  automation_account_name = azurerm_automation_account.mrstautomation.name
   frequency               = "Day"
   interval                = 1
   timezone                = "Europe/London"
@@ -52,7 +52,7 @@ resource "azurerm_automation_schedule" "scheduledstopvm" {
 
 resource "azurerm_automation_job_schedule" "stopvm_sched" {
   resource_group_name     = azurerm_resource_group.rg.name
-  automation_account_name = azurerm_automation_account.mrsautomation.name
+  automation_account_name = azurerm_automation_account.mrstautomation.name
   schedule_name           = azurerm_automation_schedule.scheduledstopvm.name
   runbook_name            = azurerm_automation_runbook.startstopvmrunbook.name
   parameters = {
@@ -69,7 +69,7 @@ resource "azurerm_automation_runbook" "startstopvmrunbook" {
       name                           = "startstopvmrunbook"
       location                       = azurerm_resource_group.rg.location
       resource_group_name            = azurerm_resource_group.rg.name
-      automation_account_name        = azurerm_automation_account.mrsautomation.name
+      automation_account_name        = azurerm_automation_account.mrstautomationn.name
       log_verbose                    = "true"
       log_progress                   = "true"
       description                    = "This runbook starts VMs in parallel based on a matching tag value"
