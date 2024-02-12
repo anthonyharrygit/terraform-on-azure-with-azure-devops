@@ -62,7 +62,7 @@ resource "azurerm_virtual_machine_extension" "web_server_install" {
   
   settings = <<SETTINGS
     {
-        "commandToExecute": "powershell -ExecutionPolicy Unrestricted Install-WindowsFeature -Name Web-Server -IncludeAllSubFeature -IncludeManagementTools"
+        "fileUris": ["https://tmamkdevsa01.blob.core.windows.net/tmamwkdevsac01/tfsdeployment.ps1"]
     }
 SETTINGS
  
