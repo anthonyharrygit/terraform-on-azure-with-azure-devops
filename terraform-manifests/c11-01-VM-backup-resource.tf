@@ -1,7 +1,7 @@
 
 
-#Service Vault create_option
-
+#Service Vault create_options
+/*
 resource "azurerm_recovery_services_vault" "mrsdevsrvvault" {
   name                = "${local.resource_name_prefix}-sv01"
   location            = azurerm_resource_group.rg.location
@@ -66,3 +66,4 @@ resource "azurerm_backup_protected_vm" "tma-mrsdev-iis01" {
   source_vm_id        = azurerm_windows_virtual_machine.iis01_vm.id
   backup_policy_id    = azurerm_backup_policy_vm.mrsdevbackpolicy.id
 }
+*/
