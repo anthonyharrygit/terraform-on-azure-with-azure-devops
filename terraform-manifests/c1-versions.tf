@@ -23,4 +23,4 @@ provider "azurerm" {
 }
 
 
-#test change for CICDs
+#test change for CICD
