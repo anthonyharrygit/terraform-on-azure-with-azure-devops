@@ -45,7 +45,7 @@ resource "azurerm_automation_schedule" "scheduledstopvm" {
   frequency               = "Day"
   interval                = 1
   timezone                = "Europe/London"
-  start_time              = "2024-02-12T17:30:00Z"
+  start_time              = "2024-02-16T17:30:00Z"
   #daily_recurrence_time = "2210"
   description             = "Run every day"
 }
